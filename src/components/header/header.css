@@ -1,0 +1,25 @@
+header {
+    height: 50vh;
+    padding: 2vw 4vw 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 26px;
+}
+
+@media (min-width: 768px) {
+    header {
+        height: 30vh;
+    }
+    
+    header h1 {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+   
+}

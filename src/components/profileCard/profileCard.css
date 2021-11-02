@@ -1,0 +1,16 @@
+article.profile-card {
+    margin: 24px;
+    border: 1px solid var(--text-light);
+}
+
+article.profile-card img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--text-light);
+}
+
+article.profile-card h3 {
+    text-align: center;
+    padding: 8px;
+}

@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+  --background-dark: #0a0010;
+  --background-dark-transparent: rgba(10, 0, 16, 0.767);
+  --text-light: #e9e7e7;
+  --font: 'Noto Sans Mono', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: var(--text-light);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #110049;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #17015f;
+}
+
+body {
+  background-color: var(--background-dark);
+  font-family: var(--font);
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  padding: 2vw 4vw 1vw;
   min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  margin-bottom: 32px;
 }
