@@ -1,42 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = ( props ) => {
+
+  const { setHeading } = props;
+
+  useEffect( () => {
+    setHeading('Pioneras en música electroacústica')
+  } );
+
   return (
     <main className="home">
       <section>
-        <h2>Lorem Ipsum</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa debitis
-          ipsam atque, rem alias unde maiores architecto repellendus doloribus
-          voluptatibus hic quidem, esse nisi reiciendis quod dicta vel
-          doloremque facere? Magnam laudantium itaque velit unde magni? Delectus
-          officiis animi distinctio ea natus, ad impedit culpa ipsam maxime a
-          quia voluptates soluta sunt excepturi reprehenderit voluptatibus
-          beatae veniam blanditiis laboriosam commodi?
+          "La historia de la música electrónica está inevitablemente relacionada con la historia de la ciencia, son los avances científicos lo que permitió desarrollar máquinas capaces de grabar, modificar y reproducir sonidos en un momento donde lo habitual era la composición con instrumentos clásicos. El sesgo de género en la ciencia es algo que se viene criticando desde hace años, no sólo son pocas las mujeres que pueden aproximarse al trabajo científico si no que, además las pocas presentes son usualmente invisibilizadas."
         </p>
         <p>
-          Sequi aliquam dicta magni placeat laborum, ea commodi rem esse
-          assumenda consequatur eos reiciendis laboriosam repellendus iste
-          repellat itaque nihil quam nesciunt possimus id in! Ipsum dignissimos
-          sapiente quos debitis. Ipsum error voluptatem facilis molestiae fuga
-          eveniet ipsa accusantium doloribus asperiores? Modi nemo provident
-          excepturi recusandae sint ipsa temporibus! Impedit praesentium quo
-          quos ducimus excepturi ex necessitatibus aut deserunt qui??
+          "En el desarrollo de maquinaria electrónica vinculada a la creación musical siempre ha habido mujeres y muchas de ellas además de ser matemáticas, físicas o ingenieras también eran compositoras de música o creadoras de sonidos. Es habitual hablar de los grandes pioneros de la electrónica y reconocer nombres como Leon Theremin, Pierre Henry, Pierre Schaeffer o Brian Eno. Pocos recuerdan que Leon Theremin consiguió popularizar en Theremin gracias a su gira con Clara Rockmore, del mismo modo pocos saben que justo antes de que Bob Moog creara su primer sintetizador en 1963, Daphne Oram ya había creado su Oramics en 1957." 
         </p>
-        <p>
-          Modi, exercitationem at. Cupiditate veniam saepe expedita, rerum
-          minima placeat atque recusandae repellendus! Cupiditate totam ipsa
-          beatae, iure ea reprehenderit corrupti itaque delectus tempore, quis
-          perferendis facere. Sint, illum vero? Facilis, reprehenderit? Ducimus
-          odio inventore magnam cum veritatis soluta quaerat alias non, optio
-          aut ea tempore in ipsam quidem mollitia maxime! Cumque cupiditate
-          exercitationem officiis, rem sit hic repudiandae placeat? Maiores a
-          quisquam quia quasi minus corrupti corporis ducimus voluptatem
-          perspiciatis totam nostrum impedit, saepe delectus vel repudiandae nam
-          repellat quibusdam rerum consequuntur obcaecati cum consequatur sequi
-          accusantium porro? Autem
-        </p>
+        <Link to={{ pathname: "https://mujeresymusica.com/pioneas-musica-electronica/" }} target="_blank">Fuente: mujeresymusica.com/pioneas-musica-electronica/
+        </Link>
+
       </section>
     </main>
   );

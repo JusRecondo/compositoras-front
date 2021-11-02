@@ -3,6 +3,10 @@ article.profile-card {
     border: 1px solid var(--text-light);
 }
 
+article.profile-card:hover {
+    box-shadow: 0 0 5px var(--text-light);
+}
+
 article.profile-card img {
     width: 300px;
     height: 300px;

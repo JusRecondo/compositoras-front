@@ -1,10 +1,12 @@
-import React from "react";
 import './header.css';
 
-const Header = () => {
+const Header = ( props ) => {
+
+    const { heading } = props;
+   
     return (
         <header>
-            <h1>Compositoras pioneras en música electroacústica</h1>
+            <h1>{ heading }</h1>
         </header>
     );
 }

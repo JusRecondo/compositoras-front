@@ -1,16 +1,23 @@
 main.profile section {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    padding:  32px 0;
+    padding: 8px;
+    border: 1px solid var(--text-light); 
+    margin-bottom: 16px;
 }
 
 main.profile section.media {
     justify-content: space-evenly;
 }
 
+main.profile section.media iframe{
+    max-width: 100%;
+    width: 560px;
+    height: 315px;
+}
+
 main.profile p {
-    width: 50%;
-    margin-right: 32px;
+    width: 100%;
 }
 
 main.profile img {
@@ -18,4 +25,18 @@ main.profile img {
     width: 500px;
     object-fit: cover;
     object-position: top;
+}
+
+
+
+@media (min-width: 1024px) {
+    main.profile section {
+        flex-direction: row;
+        padding: 32px;
+    }
+
+    main.profile p {
+        width: 50%;
+        margin-right: 32px;
+    }
 }

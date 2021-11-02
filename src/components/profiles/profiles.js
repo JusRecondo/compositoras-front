@@ -7,13 +7,10 @@ const Profiles = ( props ) => {
     const [ profiles, setProfiles ] = useState([]);
     const url = '/api/compositoras/';
 
-    useEffect( () => {
-        handleFetch( url );        
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-        }, []
-    );
+    const { setHeading } = props;
 
-    const handleFetch = ( url ) => {
+    useEffect( () => {
+        setHeading('Pioneras en música electroacústica');
         fetch( url )
         .then( response => {
             if(!response.ok) {
@@ -23,11 +20,11 @@ const Profiles = ( props ) => {
         } )
         .then( data => {
             setProfiles( data );   
-        } )
-    }
+        } )       
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+        }, []
+    );
 
-/* 
-    const fakeId = */ 
     return (
         <main className="profiles">
             <section>

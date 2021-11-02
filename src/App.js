@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar/navbar';
@@ -9,19 +9,22 @@ import Profile from './components/profile/profile';
 import Footer from './components/footer/footer';
 
 function App() {
+
+  const [ heading, setHeading ] = useState( 'Pioneras en música electroacústica' );
+
   return (
     <BrowserRouter>
       <Navbar/>
-      <Header/>
+      <Header heading={ heading }/>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home setHeading={ setHeading }/>
         </Route>  
         <Route exact path="/compositoras">
-          <Profiles/>
+          <Profiles setHeading={ setHeading }/>
         </Route>
         <Route exact path="/:id">
-          <Profile/>
+          <Profile setHeading={ setHeading }/>
         </Route>
       </Switch>
       <Footer/>

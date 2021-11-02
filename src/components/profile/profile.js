@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import './profile.css';
 
-const Profile = () => {
+const Profile = ( props ) => {
 
     const [ profile, setProfile ] = useState({});
 
@@ -10,13 +10,9 @@ const Profile = () => {
 
     const url = '/api/compositoras/' + id;
 
-    useEffect( () => {
-        handleFetch( url );        
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-        }, []
-    );
+    const { setHeading } = props;
 
-    const handleFetch = ( url ) => {
+    useEffect( () => { 
         fetch( url )
         .then( response => {
             if(!response.ok) {
@@ -25,17 +21,18 @@ const Profile = () => {
             return response.json();
         } )
         .then( data => {
-            setProfile( data );    
-        } )
-    }
-
+            setProfile( data ); 
+            let heading = `${ data.name } (${ data.years })`;
+            setHeading( heading );   
+        } )      
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+        }, []
+    );
 
     return (
         <>
         { profile.name ? 
         <main className="profile">
-            <h2>{ profile.name }</h2>      
-            <h3>{ profile.years }</h3>  
             <section className="info">
                 <p>{ profile.info } </p>
                 <figure>
@@ -43,7 +40,7 @@ const Profile = () => {
                 </figure>
             </section> 
             <section className="media">
-               <iframe width="560" height="315" src={ profile.url.replace('/watch?v=', '/embed/') } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+               <iframe src={ profile.url.replace('/watch?v=', '/embed/') } title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
             </section>
         </main>
         :

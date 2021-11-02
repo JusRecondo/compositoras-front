@@ -57,7 +57,10 @@ ul {
 
 main {
   padding: 2vw 4vw 1vw;
-  min-height: 100vh;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 img {
@@ -69,6 +72,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1200px;
 }
 
 p {
